@@ -6,5 +6,9 @@ export async function GET(request) {
 
   const { data } = await supabase.from("shareprice").select();
 
-  return NextResponse.json(data);
+  return NextResponse.json(data, {
+    headers: {
+      "Cache-Control": "no-cache",
+    }
+  });
 }
