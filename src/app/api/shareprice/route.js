@@ -9,6 +9,7 @@ export async function GET(request) {
   return NextResponse.json(data, {
     headers: {
       "Cache-Control": "no-cache",
-    }
+    },
+    revalidate: 10,
   });
 }
